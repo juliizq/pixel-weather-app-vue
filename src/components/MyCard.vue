@@ -120,7 +120,7 @@ export default {
     async searchLocations() {
       if (this.query.length >= 2) {
         try {
-          const response = await axios.get(`http://api.geonames.org/searchJSON?name_startsWith=${this.query}&maxRows=10&username=${this.username}`);
+          const response = await axios.get(`https://api.geonames.org/searchJSON?name_startsWith=${this.query}&maxRows=10&username=${this.username}`);
           this.searchResults = response.data.geonames.map(result => ({
             name: `${result.name}, ${result.countryName}`,
             id: result.geonameId,
